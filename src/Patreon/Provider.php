@@ -40,7 +40,7 @@ class Provider extends AbstractProvider
      */
     protected function getTokenUrl()
     {
-        return 'https://api.patreon.com/oauth2/token';
+        return 'https://www.patreon.com/api/oauth2/token';
     }
 
     /**
@@ -49,7 +49,7 @@ class Provider extends AbstractProvider
     protected function getUserByToken($token)
     {
         $response = $this->getHttpClient()->get(
-            'https://api.patreon.com/oauth2/api/current_user',
+            'https://www.patreon.com/api/oauth2/v2/identity',
             [
                 RequestOptions::HEADERS => [
                     'Accept'        => 'application/json',
